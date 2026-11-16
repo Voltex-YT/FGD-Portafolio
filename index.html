@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Digital | Jesús Neria & Zahid Hernández</title>
+    <!-- PDF.js para leer los títulos reales de los PDF automáticamente -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR MÓVIL -->
+    <div class="mobile-header">
+        <h2>Portafolio Digital</h2>
+        <button class="menu-toggle-btn" onclick="toggleSidebar()">☰ Actividades</button>
+    </div>
+
+    <div class="app-container">
+        <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+        <!-- MENÚ LATERAL -->
+        <nav class="sidebar" id="sidebar">
+            <div class="profile-card">
+                <img src="assets/logo_voltex_emblema_circulo.png" alt="Logo Voltex" onerror="this.style.display='none'">
+                <h1>Portafolio Digital FGU</h1>
+                <p>BUAP</p>
+                <div class="badges-container">
+                    <span class="badge">Jesús Neria Gómez • 202438968</span>
+                    <span class="badge">Zahid Hernández Pajarito • 202430770</span>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 1: ACTIVIDADES AUTOGESTIVAS -->
+            <button class="unit-btn" onclick="toggleMenu('menu-acag')">
+                <span id="title-acag">📂 Act. Autogestivas (...)</span>
+                <span>▼</span>
+            </button>
+            <div id="menu-acag" class="submenu active">
+                <span class="info-msg">⏳ Escaneando carpeta...</span>
+            </div>
+
+            <!-- SECCIÓN 2: ACTIVIDADES DE PORTAFOLIO -->
+            <button class="unit-btn" onclick="toggleMenu('menu-acpt')">
+                <span id="title-acpt">📁 Act. Portafolio (...)</span>
+                <span>▼</span>
+            </button>
+            <div id="menu-acpt" class="submenu">
+                <span class="info-msg">⏳ Escaneando carpeta...</span>
+            </div>
+        </nav>
+
+        <!-- VISOR DE PDFs -->
+        <main class="content-area">
+            <iframe name="visor" id="visor" src=""></iframe>
+        </main>
+    </div>
+
+    <script src="assets/script.js"> </script>
+</body>
+
+</html>
